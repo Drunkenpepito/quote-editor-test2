@@ -18,7 +18,7 @@ class TrucsController < ApplicationController
       if @truc.save
         
         respond_to do |format|
-          format.html { redirect_to truc_url(@truc), notice: "Truc was successfully created." }
+          format.html { redirect_to truc_path(@truc), notice: "Truc was successfully created." }
           format.turbo_stream
         end
       else
@@ -32,8 +32,7 @@ class TrucsController < ApplicationController
   def update
     if @truc.update(truc_params)
       respond_to do |format|
-        format.html { redirect_to truc-url(@truc), notice: "Truc was successfully destroyed." }
-        format.turbo_stream 
+        format.html { redirect_to truc_path(@truc), notice: "Truc was successfully updated." }
       end  
     else
       render :edit, status: :unprocessable_entity
@@ -44,8 +43,7 @@ class TrucsController < ApplicationController
     @truc.destroy
     redirect_to trucs_path, notice: "Truc was successfully destroyed."
   end
-
-#   private
+  private
 
   def set_truc
     @truc = Truc.find(params[:id])
