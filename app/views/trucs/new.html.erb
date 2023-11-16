@@ -1,0 +1,10 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Back to trucs"), trucs_path %>
+
+  <div class="header">
+    <h1>New truc</h1>
+  </div>
+  <%= turbo_frame_tag @truc do %>
+    <%= render "form", truc: @truc %>
+  <% end %>
+</main>

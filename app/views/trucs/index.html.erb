@@ -1,0 +1,22 @@
+
+<main class="container">
+
+  <div class="header">
+    <h1>Trucs</h1>
+  <%= turbo_frame_tag "F1" do %>
+
+    <%= link_to "New truc",
+                new_truc_path,
+                data: { turbo_frame: dom_id(Truc.new) },
+                class: "g-transparent hover:bg-blue-500 text-blue-400 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded no-underline" 
+    %>
+    </div>
+
+    <%= turbo_frame_tag Truc.new %>
+
+    <%= turbo_frame_tag "trucs" do %>
+      <%= render @trucs %>
+    <% end %>
+  <% end %>
+
+</main>

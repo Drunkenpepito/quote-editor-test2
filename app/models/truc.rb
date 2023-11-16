@@ -1,0 +1,3 @@
+class Truc < ApplicationRecord
+    
+end
